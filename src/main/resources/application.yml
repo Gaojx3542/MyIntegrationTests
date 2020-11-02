@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+logging.level.org.springframework.web: DEBUG
+logging.file.name: /logs/log.log
+
+
+spring.jackson.date-format: yyyy-MM-dd HH:mm:ss
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/integrationtest?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: abc354200
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true # 控制台显示执行的sql语句
+    hibernate:
+      # create/create-drop/update/validate/none
+      ddl-auto: create # 启动更新DDL（create、alter和drop等）
+      dialect: org.hibernate.dialect.MySQL5Dialect
+
+#脚本初始化(always/never)
+spring.datasource.initialization-mode: never
